@@ -1,5 +1,5 @@
 html {
-    height: -webkit-fil-available;
+    height: -webkit-fill-available;
 }
 body {
     display: flex;
@@ -10,7 +10,7 @@ body {
     min-height: -webkit-fill-available;
     margin: 0px;
     font-family: sans-serif;
-    background-color: #fcdee0;
+    background-color: #6260e2;
 }
 #superior {
     display: flex;
@@ -19,18 +19,12 @@ body {
     align-items: center;    /* centra els elements en la direcció perpendicular a la de disposició */
     font-size: 4vmax;    /* mida d'un 4% respecte l'alçària de la pantalla */
     color: white;    /* color del text */
-    background-color: #950E17;    /* color de fons */
+    background-color: #100e95;    /* color de fons */
 }
 
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */
     display: none;    /* les seccions s'inicien ocultes, excepte la primera */
-}
-#seccio_1 {
-    display: flex;    /* única secció que es mostra a l'inici */
-    justify-content: center;    /* contingut centrat en la direcció de disposició */
-    align-items: center;    /* contingut centrat en la direcció transversal */
-    font-size: 4vmax;
 }
 
 #menu {
@@ -43,7 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #950E17;
+    background-color: #100e95;
     font-size: 5vmax;
     cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
 }
@@ -59,5 +53,135 @@ body {
         flex-direction: column;
         width: 8vmax;
         height: auto;    /* sobreescriu la declaració height: 8vmax; */
+    }
+}
+#seccio_2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vmax;
+}
+#credencials {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 3vmax;
+    margin: 5vmin;
+}
+#credencials div {    /* els 2 <div> dins de credencials */
+    margin-bottom: 1vmin;
+}
+#credencials input {    /* els 2 quadres de text dins de credencials */
+    max-width: 20vmax;    /* es limita l'espai que ocupen els quadres de text */
+    font-size: 3vmax;
+}
+#botons_sessio {
+    display: flex;
+    align-items: center;
+}
+#botons_sessio button {    /* els 2 botons dins de botons_sessio */
+    font-size: 3vmax;
+    padding: 2vmin;
+    margin: 1vmin;
+}
+#div_foto {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#icona_camera {
+    font-size: 40vmin;
+    color: #950E17;
+}
+#foto {
+    max-width: 60vmin;    /* dimensions màximes per a la prveisualització de les fotos */
+    max-height: 60vmin;
+    cursor: pointer;
+}
+#div_control {
+    height: 25vmax;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#div_control i {
+    cursor: pointer;
+    font-size: 20vmin;    
+    color: green;
+}
+#obturador {
+    position: absolute;
+    width: 0;
+    opacity: 0;
+}
+#canvas, #desa {
+    display: none;
+}
+#div_gran {
+    display: none;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    max-height: 100vh;
+    max-height: 100svh;
+    max-height: -webkit-fill-available;
+}
+#foto_gran {
+    max-width: 95vmin;
+    max-height: 95vmax;
+    cursor: pointer;
+}
+@media (orientation: landscape) {
+    #seccio_2 {
+        flex-direction: row;
+    }
+    #div_foto {
+        flex-direction: column;
+    }
+    #div_control {
+        width: 25vmax;
+        height: auto;
+        flex-direction: column;
+    }
+    #div_gran {
+        max-height: 100vh;
+        max-height: 100svh;
+    }
+    #foto_gran {
+        transform: rotate(-90deg);    /* gir de 90 graus correponent al canvi d'orientació */
+    }
+}
+#llista_titol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#llista_titol i {
+    font-size: 4vmax;
+    color:#950E17;
+}
+#llista_titol i:nth-child(1) {    /* primer <i> (miniatura de la foto) */
+    flex: 2;
+}
+#llista_titol i:nth-child(2) {    /* segon <i> (data i hora) */
+    flex: 3;
+}
+#llista_titol i:nth-child(3) {    /* tercer <i> (icona per esborrar la foto) */
+    flex: 1;
+}
+#llista_fotos {
+    height: 70vmax;
+    overflow-y: scroll;
+}
+#llista_fotos::-webkit-scrollbar {
+    display: none;    /* oculta la barra de desplaçament vertical */
+}
+@media (orientation: landscape) {
+    #llista_fotos {
+        height: 70vmin;
     }
 }
